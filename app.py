@@ -157,7 +157,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ── SIDEBAR FILTERS ───────────────────────────────────────────
-st.sidebar.markdown("### 🎯 Filter Options")
+st.sidebar.markdown("### Filter Options")
 
 selected_countries = st.sidebar.multiselect(
     "Select Country",
