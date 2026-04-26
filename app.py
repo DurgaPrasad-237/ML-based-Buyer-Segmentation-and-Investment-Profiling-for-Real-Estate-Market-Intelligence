@@ -10,7 +10,6 @@ warnings.filterwarnings('ignore')
 # ── PAGE CONFIG ───────────────────────────────────────────────
 st.set_page_config(
     page_title="Real Estate Buyer Intelligence",
-    page_icon="🏢",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -131,15 +130,15 @@ def load_data():
 try:
     df = load_data()
 except FileNotFoundError:
-    st.error("❌ Error: 'final_df_with_segments.csv' not found. Please ensure the file is in the same directory as app.py")
+    st.error("Error: 'final_df_with_segments.csv' not found. Please ensure the file is in the same directory as app.py")
     st.stop()
 
 # ── SEGMENT MAPPING ───────────────────────────────────────────
 segment_names = {
-    'C4 - Luxury Investors': '👑 Luxury Investors',
-    'C2 - First-Time Buyers': '🏡 First-Time Buyers',
-    'C1 - Global Investors': '🌍 Global Investors',
-    'C3 - Corporate Buyers': '🏢 Corporate Buyers'
+    'C4 - Luxury Investors': 'Luxury Investors',
+    'C2 - First-Time Buyers': 'First-Time Buyers',
+    'C1 - Global Investors': 'Global Investors',
+    'C3 - Corporate Buyers': 'Corporate Buyers'
 }
 
 segment_descriptions = {
@@ -152,7 +151,7 @@ segment_descriptions = {
 # ── HEADER ────────────────────────────────────────────────────
 st.markdown("""
 <div class="header-section">
-    <h1>🏢 Real Estate Buyer Intelligence Platform</h1>
+    <h1>Real Estate Buyer Intelligence Platform</h1>
     <p>Understand your market through buyer behavior segmentation</p>
 </div>
 """, unsafe_allow_html=True)
@@ -196,15 +195,15 @@ st.sidebar.markdown(f"### 📊 Data Summary\n**Total Buyers:** {len(filtered_df)
 
 # ── ERROR HANDLING: Check if filtered_df is empty ────────────
 if len(filtered_df) == 0:
-    st.error("❌ No data to display! Please adjust your filters to include at least one buyer.")
+    st.error("No data to display! Please adjust your filters to include at least one buyer.")
     st.stop()
 
 # ── MAIN TABS ─────────────────────────────────────────────────
 tab1, tab2, tab3, tab4 = st.tabs([
-    "📈 Overview",
-    "💰 Investor Behavior",
-    "🗺️ Geographic Analysis",
-    "📋 Segment Details"
+    "Overview",
+    "Investor Behavior",
+    "Geographic Analysis",
+    "Segment Details"
 ])
 
 # ═════════════════════════════════════════════════════════════
@@ -266,7 +265,7 @@ with tab1:
     st.plotly_chart(fig_pie, use_container_width=True)
     
     # Key Insights
-    st.markdown("### 💡 Key Insights")
+    st.markdown("###Key Insights")
     
     largest_segment = segment_counts.idxmax()
     largest_count = segment_counts.max()
